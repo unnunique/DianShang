@@ -19,7 +19,7 @@ import com.erik.sparkproject.util.DateUtils;
 import com.erik.sparkproject.util.StringUtils;
 
 /**
- * 模拟数据程序
+ * 模拟数据程序, 初始化用户和用户的行为数据
  * @author Administrator
  *
  */
@@ -115,7 +115,7 @@ public class MockData {
 		 */
 		
 		rows.clear();
-		String[] sexes = new String[]{"male", "female"};
+		String[] sexes = new String[]{"male", "female"};  // 初始化100个用户
 		for(int i = 0; i < 100; i ++) {
 			long userid = i;
 			String username = "user" + i;
