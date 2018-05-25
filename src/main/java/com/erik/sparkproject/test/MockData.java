@@ -103,6 +103,7 @@ public class MockData {
 				DataTypes.createStructField("pay_product_ids", DataTypes.StringType, true)));
 		
 		DataFrame df = sqlContext.createDataFrame(rowsRDD, schema);
+		df.show(10);
 		
 		df.registerTempTable("user_visit_action");  
 		for(Row _row : df.take(1)) {
@@ -144,6 +145,7 @@ public class MockData {
 		for(Row _row : df2.take(1)) {
 			System.out.println(_row);  
 		}
+		df2.show(10);
 		
 		df2.registerTempTable("user_info");  
 	}

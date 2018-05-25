@@ -13,7 +13,7 @@ import java.util.Date;
 public class DateUtils {
 	
 	public static final SimpleDateFormat TIME_FORMAT = 
-			new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	public static final SimpleDateFormat DATE_FORMAT = 
 			new SimpleDateFormat("yyyy-MM-dd");
 	
@@ -27,7 +27,6 @@ public class DateUtils {
 		try {
 			Date dateTime1 = TIME_FORMAT.parse(time1);
 			Date dateTime2 = TIME_FORMAT.parse(time2);
-			
 			if(dateTime1.before(dateTime2)) {
 				return true;
 			}
