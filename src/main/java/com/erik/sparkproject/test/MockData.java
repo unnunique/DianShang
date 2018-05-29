@@ -87,6 +87,7 @@ public class MockData {
 		}
 		
 		JavaRDD<Row> rowsRDD = sc.parallelize(rows);
+		System.out.printf("rows.size: ===================== " + rows.size() + "\n");
 		
 		StructType schema = DataTypes.createStructType(Arrays.asList(
 				DataTypes.createStructField("date", DataTypes.StringType, true),
@@ -104,6 +105,8 @@ public class MockData {
 		
 		DataFrame df = sqlContext.createDataFrame(rowsRDD, schema);
 		df.show(10);
+		long count = df.count();
+		System.out.printf("============================total count: ===============" + count + "\n" );
 		
 		df.registerTempTable("user_visit_action");  
 		for(Row _row : df.take(1)) {
